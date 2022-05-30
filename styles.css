@@ -1,0 +1,237 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --form-bg: #1b1b32;
+    --body-bg: #0a0a23;
+    --color-main: #f5f6f7;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif, Arial, Helvetica, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--color-main);
+    overflow-x: hidden;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero.click {
+    display: none;
+}
+
+.hero-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media(min-width: 600px) {
+    .hero img {
+        margin-left: 0.5rem;
+    }
+}
+
+.hero img {
+    width: 50px;
+}
+
+.main {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.main.show {
+    display: flex;
+}
+
+.main .header > .header-main {
+    display: flex;
+}
+
+.main .header .logo {
+    width: 50px;
+    margin-left: 1rem;
+}
+
+.main .header > p.header-description {
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+
+
+/* form */
+.main .form {
+    background-color: var(--form-bg);
+    color: #f5f6f7;
+    border-radius: .25rem;
+}
+
+
+/* actual form */
+.main .form > .survey-form {
+    padding: 2rem;
+}
+
+.main .form > .survey-form > .survey-inputs {
+    margin-bottom: 1rem;
+}
+
+.main .form > .survey-form > .survey-inputs > label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.main .form > .survey-form > .survey-inputs input[type="text"], input[type="number"], input[type="email"], select, textarea {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: var(--body-bg);
+    color: var(--color-main);
+    padding: 1rem;
+    border-radius: .25rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.main .form > .survey-form > .survey-inputs > select {
+    margin-bottom: 1rem;
+}
+
+.main .form > .survey-form > .survey-inputs > select > option {
+    font-size: 1.125rem;
+}
+
+.main .form > .survey-form > .survey-inputs > .radio-btn, 
+.main .form > .survey-form > .survey-inputs > .checkboxes  {
+    display: flex;
+    align-items: center;
+}
+
+.main .form > .survey-form > .survey-inputs > .radio-btn > label,
+.main .form > .survey-form > .survey-inputs > .checkboxes > label {
+    order: 2;
+    margin-bottom: 0.5rem;
+}
+
+.main .form > .survey-form > .survey-inputs > .radio-btn > input,
+.main .form > .survey-form > .survey-inputs > .checkboxes > input {
+    order: 1;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.main .form > .survey-form > .survey-inputs.textarea {
+    margin-top: 0.5rem;
+}
+
+.main .form > .survey-form > input[type="submit"].submit-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.65rem 1rem;
+    border-radius: .25rem;
+    background-color: #3b3b4f;
+    border-color: white;
+    color: var(--color-main);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+@media(min-width: 1800px) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* media queries */
+@media(max-width: 800px) {
+    .main .form {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 600px) {
+    .hero-text {
+        flex-direction: column;
+        text-align: center;
+    }
+        
+
+    .main .header > .header-main {
+        justify-content: center;   
+    }
+
+    .main .header > .header-main h1,
+    .hero .hero-text h1  {
+        font-size: 1.50rem;
+    }
+
+    .main .header > p {
+        font-size: 0.875rem;   
+    }
+
+    .main .header .logo {
+        width: 35px;
+        margin-left: 1rem;
+    }
+
+    
+
+
+    .main .form > .survey-form > .survey-inputs input[type="text"], input[type="number"], input[type="email"], select, textarea {
+        padding: 0.5rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .main .header > .header-main h1,
+    .hero .hero-text h1 {
+        font-size: 1.25rem;
+    }
+
+    .main .header > p, .hero p {
+        font-size: 0.65rem;   
+    }
+
+    .main .header .logo {
+        margin-left: 0;
+    }
+
+} 
+
